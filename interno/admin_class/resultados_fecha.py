@@ -7,4 +7,7 @@ class ResultadoFechaAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "participante",
+        "fecha_de_pesca",
+        "puntaje_obtenido",
     )
+    autocomplete_fields = ("participante",)
