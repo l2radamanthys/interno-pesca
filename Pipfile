@@ -12,6 +12,7 @@ psycopg2-binary = "==2.8.6"
 black = "*"
 whitenoise = "*"
 gunicorn = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
