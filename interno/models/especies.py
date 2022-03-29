@@ -5,7 +5,8 @@ class Especie(models.Model):
     nombre = models.CharField(max_length=200, default=None, blank=True, null=True)
 
     class Meta:
-        db_table = 'especies'
+        ordering = ["nombre"]
+        db_table = "especies"
         verbose_name = "Especie"
         verbose_name_plural = "especies"
 

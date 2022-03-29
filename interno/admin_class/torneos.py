@@ -5,7 +5,7 @@ from interno.models.torneos import Torneo
 class TorneoAdmin(admin.ModelAdmin):
     model = Torneo
     list_display = (
-        'id',
-        'nombre',
+        "id",
+        "nombre",
     )
-
+    search_fields = ("nombre",)

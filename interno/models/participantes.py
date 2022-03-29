@@ -8,7 +8,8 @@ class Participante(models.Model):
     fecha_nacimiento = models.DateField(default=None, blank=True, null=True)
 
     class Meta:
-        db_table = 'participantes'
+        db_table = "participantes"
+        ordering = ["apellido", "nombre"]
         verbose_name = "Participante"
         verbose_name_plural = "participantes"
 
