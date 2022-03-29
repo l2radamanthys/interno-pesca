@@ -26,6 +26,7 @@ DEBUG = env("DEBUG")
 ENVIROMENT = env("ENVIROMENT")
 
 ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(";")
+ALLOWED_HOSTS += ["https://interno-villa-cristina.herokuapp.com/"]
 CORS_ORIGIN_WHITELIST = [f"http://{url}" for url in env("ALLOWED_HOSTS").split(";")]
 CORS_ORIGIN_WHITELIST += [f"https://{url}" for url in env("ALLOWED_HOSTS").split(";")]
 CORS_ORIGIN_WHITELIST += [
