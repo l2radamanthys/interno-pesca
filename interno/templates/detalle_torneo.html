@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_content %}
+<div class="container pa3">
+  <div>
+    <h1>{{ torneo.nombre }}</h1>
+  </div>
+
+  <div>
+    <ul class="nav nav-tabs">
+      <li class="pa3 active"><a data-toggle="tab" href="#fechas">Fechas</a></li>
+      {% for categoria in categorias %}
+        <li class="pa3 active"><a data-toggle="tab" href="#menu{{ forloop.counter }}">{{ categoria.nombre }}</a></li>
+      {% endfor %}
+    </ul>
+
+    <div class="tab-content">
+      <div id="fechas" class="tab-pane fade in active">
+        <h3>Fechas</h3>
+
+        <div class="list-group">
+          {% for fecha_de_pesca in fechas_de_pesca %}
+            <a href="{% url 'detalle-torneo' torneo.id %}" class="list-group-item list-group-item-action">
+              {{ fecha_de_pesca.fecha|date:"d/m/Y" }} - {{ fecha_de_pesca.nombre }}
+            </a>
+          {% endfor %}
+        </div>
+
+      </div>
+      <div id="menu1" class="tab-pane fade">
+        <h3>Menu 1</h3>
+        <p>Some content in menu 1.</p>
+      </div>
+      <div id="menu2" class="tab-pane fade">
+        <h3>Menu 2</h3>
+        <p>Some content in menu 2.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

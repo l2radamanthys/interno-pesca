@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_content %}
+  <div class="container pa3">
+    <div class="w-70 center">
+      <img src="{% static 'logo-300.png' %}"  class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="tc pa3 ttu">
+      <h1>Resultados del Interno de Pesca</h1>
+    </div>
+
+    <div class="list-group">
+      {% for torneo in torneos %}
+        <a href="{% url 'detalle-torneo' torneo.id %}" class="list-group-item list-group-item-action">{{ torneo.nombre }}</a>
+      {% endfor %}
+
+    </div>
+  </div>
+{% endblock %}

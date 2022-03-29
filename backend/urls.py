@@ -4,10 +4,14 @@ import backend.settings as settings
 from django.views.generic.base import TemplateView, RedirectView
 from django.conf.urls.static import static
 from django.urls import re_path as url
+from django.conf.urls import include
+from interno.views.statics_pages import *
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("torneo/<pk>", detalle_torneo, name="detalle-torneo"),
+    path("", home_page, name="home"),
 ]
 
 
