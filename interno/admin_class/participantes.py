@@ -11,4 +11,8 @@ class ParticipanteAdmin(admin.ModelAdmin):
         "dni",
         "fecha_nacimiento",
     )
-    search_fields = ("nombre", "apellido", "dni",)
+    search_fields = (
+        "nombre",
+        "apellido",
+        "dni",
+    )

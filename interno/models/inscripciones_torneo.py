@@ -10,7 +10,9 @@ class InscripcionTorneo(models.Model):
         blank=True,
         null=True,
     )
-    categoria = models.ForeignKey("Categoria", on_delete=models.CASCADE, default=None, blank=True, null=True)
+    categoria = models.ForeignKey(
+        "Categoria", on_delete=models.CASCADE, default=None, blank=True, null=True
+    )
 
     class Meta:
         db_table = "inscripciones_torneo"

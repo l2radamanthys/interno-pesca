@@ -56,6 +56,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # heroku statics
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -114,13 +115,15 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-STATIC_ROOT = "static"
+STATIC_ROOT = "staticfiles"
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
-    #os.path.join(BASE_DIR, "media_archivos_locales"),
+    # os.path.join(BASE_DIR, "media_archivos_locales"),
 )
 
 MEDIA_ROOT = os.environ.get("MEDIA_ROOT", "media_archivos_locales")
 MEDIA_URL = "/media/"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

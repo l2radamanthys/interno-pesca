@@ -7,17 +7,23 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('interno', '0002_initial'),
+        ("interno", "0002_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='inscripciontorneo',
-            name='torneo',
+            model_name="inscripciontorneo",
+            name="torneo",
         ),
         migrations.AddField(
-            model_name='inscripciontorneo',
-            name='categoria',
-            field=models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='interno.categoria'),
+            model_name="inscripciontorneo",
+            name="categoria",
+            field=models.ForeignKey(
+                blank=True,
+                default=None,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="interno.categoria",
+            ),
         ),
     ]
