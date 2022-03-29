@@ -29,5 +29,5 @@ class ResultadoFecha(models.Model):
         verbose_name = "Resultado fecha"
         verbose_name_plural = "resultados fecha"
 
-    # def __str__(self):
-    #     return self.nombre
+    def __str__(self):
+        return f" {self.participante} {self.puntaje_obtenido}"

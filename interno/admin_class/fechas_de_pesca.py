@@ -15,6 +15,7 @@ class FechaDePescaAdmin(admin.ModelAdmin):
         "orden",
         "torneo",
         "nombre",
+        "lugar",
         "fecha",
     )
     inlines = [

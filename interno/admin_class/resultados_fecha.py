@@ -1,5 +1,11 @@
 from django.contrib import admin
 from interno.models.resultados_fecha import ResultadoFecha
+from interno.models.especies_resultados import EspecieResultado
+
+
+class EspecieResultadoInline(admin.TabularInline):
+    model = EspecieResultado
+    extra = 0
 
 
 class ResultadoFechaAdmin(admin.ModelAdmin):
@@ -11,3 +17,8 @@ class ResultadoFechaAdmin(admin.ModelAdmin):
         "puntaje_obtenido",
     )
     autocomplete_fields = ("participante",)
+    inlines = (
+        EspecieResultadoInline,
+    )
+
+
